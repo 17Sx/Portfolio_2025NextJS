@@ -7,8 +7,12 @@ import { Environment } from '@react-three/drei';
 export default function Scene() {
   return (
     <>
-      <Canvas camera={{
-          position: [0, 0, 10], 
+      <Canvas
+      style={{
+        height: '100vh',
+      }}
+     camera={{
+          position: [0, 0, 8], 
           fov: 90, 
         }}>
         <Model />

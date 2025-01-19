@@ -1,36 +1,26 @@
 import { MeshTransmissionMaterial, useGLTF, Text } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
-import { useControls } from 'leva';
 import { useRef } from 'react';
 import * as THREE from 'three';
 
 export default function Model() {
-  const { nodes } = useGLTF('noa.glb');
+  const { nodes } = useGLTF('model/noa.glb');
   const { viewport } = useThree();
   const groupRef = useRef<THREE.Group>(null);
 
-  const { 
-    pivotX, 
-    pivotY, 
-    pivotZ,
-    rotationSpeed,
-    showPivotHelper 
-  } = useControls({
-    pivotX: { value: 0, min: -5, max: 5, step: 0.1 },
-    pivotY: { value: 0, min: -5, max: 5, step: 0.1 },
-    pivotZ: { value: 0, min: -5, max: 5, step: 0.1 },
-    rotationSpeed: { value: 0.00, min: -0.1, max: 0.1, step: 0.00 },
-    showPivotHelper: true
-  });
+  const pivotX = 0;
+  const pivotY = 0;
+  const pivotZ = 0;
+  const rotationSpeed = 0.01;
 
-  const materialProps = useControls({
-    thickness: { value: 3, min: 0, max: 3, step: 0.05 },
-    roughness: { value: 0, min: 0, max: 1, step: 0.1 },
-    transmission: { value: 1, min: 0, max: 1, step: 0.1 },
-    ior: { value: 1.2, min: 0, max: 3, step: 0.1 },
-    chromaticAberration: { value: 0.02, min: 0, max: 1 },
-    backside: { value: false },
-  });
+  const materialProps = {
+    thickness: 3,
+    roughness: 0,
+    transmission: 1,
+    ior: 1.2,
+    chromaticAberration: 0.02,
+    backside: false,
+  };
 
   useFrame(() => {
     if (groupRef.current) {
@@ -40,15 +30,18 @@ export default function Model() {
 
   return (
     <>
-      <Text 
-        position={[0, 0, 0]} 
+{/*     <Text 
+        position={[0, 2.5, 2.5]} 
         fontSize={2} 
-        color="white" 
+        color="black" 
+        font='font/chrome.ttf'
+        fontWeight={700}
         anchorX="center" 
         anchorY="middle"
       >
-        Noa Obringer
-      </Text>
+        Welcome to my portfolio.
+      </Text>*/}
+
 
       {/* Groupe principal qui gère la rotation */}
       <group ref={groupRef}>
@@ -73,7 +66,6 @@ export default function Model() {
           })}
         </group>
       </group>
-
     </>
   );
 }

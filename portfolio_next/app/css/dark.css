@@ -1,0 +1,75 @@
+.dark {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .dark .header {
+    background-color: #000000;
+    border-bottom: 1px solid #ffffff;
+  }
+  
+  .dark .header h1 {
+    color: #fff;
+  }
+  
+  .dark .header p {
+    color: #ccc;
+  }
+  
+  .dark .logo img {
+    filter: invert(0);
+  }
+  
+  .dark .nav-links ul a {
+    color: #ccc;
+  }
+  
+  .dark .nav-links ul a:hover {
+    color: #fff;
+  }
+  
+  .dark .presentation-content {
+    background-color: black;
+    border: 1px solid white;
+  }
+
+  .dark .animated-paragraph {
+    color: #ffffff;
+  }
+  
+  .dark .skills {
+    background-color: #000;
+  }
+  
+  .dark .skills-content {
+    background-color: black;
+    border: 1px solid white;
+  }
+  
+  .dark .skill-item {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .dark .highlight-link {
+    color: #fff;
+  }
+  
+  .dark .highlight-link::after {
+    background-color: #fff;
+  }
+  
+  .dark .presentation-text p {
+    color: #ffffff;
+  }
+  
+  .dark .animated-title {
+    color: #ffffff;
+  }
+  
+  .dark .animated-title::after {
+    background: linear-gradient(90deg, #fff, transparent);
+  }
+  
+  .dark .skill-item{
+    fill: #fff;
+  }

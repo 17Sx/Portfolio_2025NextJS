@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-y: auto;
+  }
+  
+  main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto';
+  }
+  
+  
+  
+  @font-face {
+    font-family: 'chrome';  
+    src: url('../../public/font/chrome.ttf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'Roboto';  
+    src: url('../../public/font/rb.ttf') format('opentype');
+  }
+  
+  .top{
+    height: 100vh;
+    width: 100%;
+  }
+  

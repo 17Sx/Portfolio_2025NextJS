@@ -1,0 +1,100 @@
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Roboto';
+    background: none;
+    height: 20vh;
+    width: 100%;
+    border-bottom: 1px solid rgb(0, 0, 0);
+  }
+  
+  
+  .header h1 {
+    font-size: 3rem;
+    font-family: 'chrome', sans-serif;  
+    width: 100%;
+  }
+  
+  .header p{
+    font-size: 1.5rem;
+    width: 100%;
+    font-weight: 300;
+  }
+  
+  .logo{
+    display: flex;
+    align-items: center;
+    width: 40%;
+  }
+  
+  .logo-text{
+    height: 100%;
+    width: 100%;
+    font-weight: lighter;
+    text-align: flex-start;
+    display: flex;  
+    align-items: center;
+  }
+  
+  .logo img{
+    width: 80px;
+    height: 80px;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    filter: invert(1);
+  }
+  
+  .theme-switch{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    height: 100%;
+  }
+  
+  .theme-switch svg{
+    width: 30px;
+    height: 30px;
+    fill: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .theme-switch svg:hover{
+    animation: rotation 0.5s ease;
+  }
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .nav-links{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 40%;
+  }
+  .nav-links ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .nav-links ul a{
+    pointer-events: pointer;
+    text-decoration: none;
+    color: inherit;
+    margin-right: 3rem;
+    transition: all 0.3s ease;
+  
+  }

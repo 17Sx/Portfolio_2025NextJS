@@ -99,7 +99,7 @@ const SceneContent = ({ text }: SceneContentProps) => {
         <Model />
         <Text
           ref={textRef}
-          position={[0, 4, 1]} 
+          position={[0, 2.5, 5]} 
           fontSize={1} 
           font='font/kholic.otf'
           fontWeight={700}
@@ -123,7 +123,7 @@ const SceneContent = ({ text }: SceneContentProps) => {
         maxPolarAngle={Math.PI / 2}
         target={[0, 0, 0]}
       />
-      <Environment preset="city" />
+      <Environment preset="warehouse" />
     </>
   );
 };
@@ -146,3 +146,5 @@ const Scene = ({ text }: SceneProps) => {
 };
 
 export default Scene;
+
+

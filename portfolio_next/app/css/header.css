@@ -45,6 +45,42 @@
     margin-left: 1rem;
     filter: invert(1);
   }
+
+  .logo img:hover{
+    animation: rotation 0.5s ease;
+  }
+
+    .p-container {
+        position: relative;
+        overflow: hidden;
+        height: 40px; 
+    }
+
+    .logo-text p {
+        position: relative;
+        display: inline-block;
+        transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+
+    .logo-text p::before {
+        content: attr(data-text);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+
+    .logo-text p:hover {
+        transform: translateY(-100%);
+    }
+
+    .logo-text p:hover::before {
+        opacity: 1;
+        transform: translateY(0);
+    }
   
   .theme-switch{
     display: flex;
@@ -85,16 +121,40 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 40%;
+    width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
   }
-  .nav-links ul a{
-    pointer-events: pointer;
+  .nav-links ul li {
+    position: relative;
+    overflow: hidden;
+    height: 40px; 
+}
+
+.nav-links ul a {
+    position: relative;
+    display: inline-block;
     text-decoration: none;
     color: inherit;
     margin-right: 3rem;
-    transition: all 0.3s ease;
-  
-  }
+    transition: transform 0.8s ease;
+}
+
+.nav-links ul a::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.nav-links ul a:hover {
+    transform: translateY(-100%);
+}
+
+.nav-links ul a:hover::before {
+    opacity: 1;
+}

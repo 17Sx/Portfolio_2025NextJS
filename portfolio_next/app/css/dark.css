@@ -1,10 +1,16 @@
 .dark {
-    background-color: #000;
     color: #fff;
+  }
+
+  .dark main{
+    background-image: url('../../public/img/bg1.jpg') !important;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
   }
   
   .dark .header {
-    background-color: #000000;
     border-bottom: 1px solid #ffffff;
   }
   
@@ -29,21 +35,21 @@
   }
   
   .dark .presentation-content {
-    background-color: black;
-    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.621);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.201);
   }
 
   .dark .animated-paragraph {
     color: #ffffff;
   }
   
-  .dark .skills {
-    background-color: #000;
-  }
+
   
   .dark .skills-content {
-    background-color: black;
-    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.621);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.201);
   }
   
   .dark .skill-item {

@@ -1,6 +1,6 @@
 import { MeshTransmissionMaterial, useGLTF, Text } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useMemo } from 'react';
 import * as THREE from 'three';
 
 export default function Model() {
@@ -8,19 +8,23 @@ export default function Model() {
   const { viewport } = useThree();
   const groupRef = useRef<THREE.Group>(null);
   const [textOpacity, setTextOpacity] = useState(1);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const pivotX = 0;
   const pivotY = 0;
   const pivotZ = 0;
-  const rotationSpeed = 0.01;
+  const rotationSpeed = 0.005;
 
   const materialProps = {
-    thickness: 3,
-    roughness: 0,
+    thickness: 2,
+    roughness: 0,        
     transmission: 1,
-    ior: 1.2,
-    chromaticAberration: 0.01,
-    backside: false,
+    ior: 1.5,         
+    chromaticAberration: 0.04,
+    backside: true,     
+    clearcoat: 1,       
+    transparent: true,  
+    opacity: 0.9,       
   };
 
   useEffect(() => {
@@ -34,21 +38,9 @@ export default function Model() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useFrame(() => {
-    if (groupRef.current) {
-      groupRef.current.rotation.y += rotationSpeed;
-    }
-  });
-
-  const [textColor, setTextColor] = useState(new THREE.Color('black'));
-
   useEffect(() => {
     const handleDarkMode = () => {
-      if (document.body.classList.contains('dark')) {
-        setTextColor(new THREE.Color('white'));
-      } else {
-        setTextColor(new THREE.Color('black'));
-      }
+      setIsDarkMode(document.body.classList.contains('dark'));
     };
 
     handleDarkMode();
@@ -72,16 +64,62 @@ export default function Model() {
     };
   }, []);
 
-  const textMaterial = new THREE.MeshBasicMaterial({
+  useFrame(() => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y += rotationSpeed;
+    }
+  });
+
+  const gradientShader = useMemo(() => {
+    return {
+      uniforms: {
+        opacity: { value: 1.0 },
+        isDarkMode: { value: false },
+      },
+      vertexShader: `
+        varying vec2 vUv;
+        void main() {
+          vUv = uv;
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+      `,
+      fragmentShader: `
+        uniform float opacity;
+        uniform bool isDarkMode;
+        varying vec2 vUv;
+        void main() {
+          vec3 color1;
+          vec3 color2;
+          
+          if (isDarkMode) {
+            color2 = vec3(1.0, 1.0, 1.0); // Blanc
+            color1 = vec3(1.0, 1.0, 1.0); // Blanc
+          } else {
+            color2 = vec3(0.047, 0.271, 0.337); // #0C4556
+            color1 = vec3(0.0, 0.0, 0.0); // Noir
+          }
+          
+          vec3 finalColor = mix(color1, color2, vUv.x);
+          gl_FragColor = vec4(finalColor, opacity);
+        }
+      `
+    };
+  }, []);
+
+  const textMaterial = new THREE.ShaderMaterial({
+    ...gradientShader,
     transparent: true,
-    opacity: textOpacity,
-    color: textColor,
+    uniforms: {
+      ...gradientShader.uniforms,
+      opacity: { value: textOpacity },
+      isDarkMode: { value: isDarkMode }
+    }
   });
 
   return (
     <>
       <Text 
-        position={[0, 2.5, 2.5]} 
+        position={[0, 2.5, 3]} 
         fontSize={1} 
         material={textMaterial}
         font='font/kholic.otf'
@@ -113,7 +151,7 @@ export default function Model() {
                 <mesh 
                   key={mesh.uuid} 
                   geometry={mesh.geometry}
-                  position={[0, 0, 0]}
+                  position={[0, 2, 0]}
                   rotation={mesh.rotation}
                   scale={mesh.scale}
                 >

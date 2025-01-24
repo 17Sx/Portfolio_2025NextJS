@@ -8,6 +8,7 @@
     height: 20vh;
     width: 100%;
     border-bottom: 1px solid rgb(0, 0, 0);
+    animation : appears 1s ease;
   }
   
   
@@ -157,4 +158,13 @@
 
 .nav-links ul a:hover::before {
     opacity: 1;
+}
+
+@keyframes appears {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }

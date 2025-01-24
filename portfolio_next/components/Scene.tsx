@@ -99,8 +99,8 @@ const SceneContent = ({ text }: SceneContentProps) => {
         <Model />
         <Text
           ref={textRef}
-          position={[0, 2.5, 5]} 
-          fontSize={1} 
+          position={[0, 2.5, 4]} 
+          fontSize={0.8} 
           font='font/kholic.otf'
           fontWeight={700}
           anchorX="center" 

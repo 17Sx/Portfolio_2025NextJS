@@ -1,6 +1,5 @@
 /* Presentation Section*/
 
-
 .presentation {
     min-height: 100vh;
     width: 100%;
@@ -9,6 +8,7 @@
     justify-content: center;
     position: relative;
     overflow: hidden;
+    margin-top: 15rem;
   }
   
   .presentation::before {
@@ -17,17 +17,6 @@
     width: 200%;
     height: 200%;
   }
-  
-  @keyframes backgroundMove {
-    0% {
-      transform: translateX(0) translateY(0);
-    }
-    100% {
-      transform: translateX(-50%) translateY(-50%);
-    }
-  }
-  
-
   
   .presentation-text {
     color: #000000;
@@ -261,13 +250,17 @@
     margin-left: auto;
   }
 
-  
-
 /* Arrow Section */
 
 .arrow-down{
     margin-bottom: 2rem;
     animation: bounce infinite ease 1s;
+  }
+
+  .arrow-down img{
+    width: 500px;
+    height: 500px;
+    rotate: 45deg;
   }
   
   
@@ -452,5 +445,3 @@
       transform: translateY(0);
   }
 }
-
-

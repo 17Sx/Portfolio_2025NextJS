@@ -60,7 +60,7 @@ export default function Home() {
           trigger: ".arrow-down",
           start: "top center",
           end: "bottom center",
-          scrub: 1
+          scrub: 2
         }
       });
 
@@ -74,9 +74,11 @@ export default function Home() {
           onUpdate: (self) => {
             if (self.progress < 0.25) {
               setSceneText("");
-            } else if (self.progress < 0.55) {
+            } else if (self.progress < 0.5) {
               setSceneText("Who am I?");
-            } else if (self.progress < 0.80) {
+            } else if (self.progress < 0.70) {
+              setSceneText(" ");
+            } else if (self.progress < 0.78) {
               setSceneText("What can I do?");
             } else {
               setSceneText(" ");
@@ -110,7 +112,23 @@ export default function Home() {
         .to(".scene-container", {
           left: "30%",
         })
-      
+
+
+        gsap.fromTo(".arrow-down img", 
+          {
+            clipPath: "inset(0 0 100% 0)" 
+          },
+          {
+            clipPath: "inset(0 0 0% 0)", 
+            scrollTrigger: {
+              trigger: ".arrow-down",
+              start: "top center",
+              end: "center center",
+              scrub: 5, // Increase scrub value for slower animation
+            }
+          }
+        );
+    
 
       gsap.from("#about .presentation-content", {
         opacity: 0,
@@ -167,7 +185,8 @@ export default function Home() {
   </section>
   <About/>
   <section className="arrow-down">
-      <FontAwesomeIcon icon={faArrowDown} size="2x" />
+      {/*<FontAwesomeIcon icon={faArrowDown} size="2x" />*/}
+      <img src="img/arr.png" alt="" />
   </section>
   <Skills/>
   <Projects/>

@@ -13,7 +13,7 @@ export default function Model() {
   const pivotX = 0;
   const pivotY = 0;
   const pivotZ = 0;
-  const rotationSpeed = 0.005;
+  const rotationSpeed = 0.002;
 
   const materialProps = {
     thickness: 2,
@@ -95,8 +95,8 @@ export default function Model() {
             color2 = vec3(1.0, 1.0, 1.0); // Blanc
             color1 = vec3(1.0, 1.0, 1.0); // Blanc
           } else {
-            color2 = vec3(0.047, 0.271, 0.337); // #0C4556
             color1 = vec3(0.0, 0.0, 0.0); // Noir
+            color2 = vec3(0.0, 0.0, 0.0); // Noir
           }
           
           vec3 finalColor = mix(color1, color2, vUv.x);
@@ -119,8 +119,8 @@ export default function Model() {
   return (
     <>
       <Text 
-        position={[0, 2.5, 3]} 
-        fontSize={1} 
+        position={[0, 3, -3]} 
+        fontSize={5} 
         material={textMaterial}
         font='font/kholic.otf'
         fontWeight={700}
@@ -128,11 +128,21 @@ export default function Model() {
         anchorY="middle"
       >
         Creating solutions,
+      </Text>
+      <Text 
+        position={[0, -2, -3]} 
+        fontSize={5} 
+        material={textMaterial}
+        font='font/kholic.otf'
+        fontWeight={700}
+        anchorX="center" 
+        anchorY="middle"
+      >
         one idea at a time.
       </Text>
       <Text 
-        position={[0, -2.5, 2.5]} 
-        fontSize={0.3} 
+        position={[0, -1.5, 5]} 
+        fontSize={0.2} 
         material={textMaterial}
         font='font/kholic.otf'
         fontWeight={700}

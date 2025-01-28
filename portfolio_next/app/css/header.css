@@ -5,9 +5,8 @@
     justify-content: space-between;
     font-family: 'Roboto';
     background: none;
-    height: 20vh;
+    height: 10vh;
     width: 100%;
-    border-bottom: 1px solid rgb(0, 0, 0);
     animation : appears 1s ease;
   }
   
@@ -55,6 +54,8 @@
         position: relative;
         overflow: hidden;
         height: 40px; 
+        width: 20vw;
+        margin-left: 1rem;
     }
 
     .logo-text p {
@@ -93,7 +94,7 @@
   
   .theme-switch svg{
     width: 30px;
-    height: 30px;
+    height: 20px;
     fill: white;
     cursor: pointer;
     transition: all 0.3s ease;

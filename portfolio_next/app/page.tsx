@@ -60,7 +60,7 @@ export default function Home() {
           trigger: ".arrow-down",
           start: "top center",
           end: "bottom center",
-          scrub: 2
+          scrub: 1
         }
       });
 
@@ -74,11 +74,22 @@ export default function Home() {
           onUpdate: (self) => {
             if (self.progress < 0.25) {
               setSceneText("");
-            } else if (self.progress < 0.5) {
+              gsap.to(".scene-container", {
+                marginTop: "0rem",
+                duration: 0,
+                ease: "power2.inOut"
+                });
+            } else if (self.progress < 0.30) {
+              gsap.to(".scene-container", {
+                marginTop: "10rem",
+                duration: 0,
+                ease: "power2.inOut"
+                });
+            } else if (self.progress < 0.40) {
               setSceneText("Who am I?");
             } else if (self.progress < 0.70) {
               setSceneText(" ");
-            } else if (self.progress < 0.78) {
+            } else if (self.progress < 0.80) {
               setSceneText("What can I do?");
             } else {
               setSceneText(" ");
@@ -102,32 +113,18 @@ export default function Home() {
             height: "60vh",
             position: "fixed",
             top: "50%",
-            left: "5%",
             transform: "translateY(-50%)",
           }
         )
         .to(".scene-container", {
-          left: "55%",
+          left: "0%",
+        })
+        .to(".scene-container", {
+          left: "60%",
         })
         .to(".scene-container", {
           left: "30%",
         })
-
-
-        gsap.fromTo(".arrow-down img", 
-          {
-            clipPath: "inset(0 0 100% 0)" 
-          },
-          {
-            clipPath: "inset(0 0 0% 0)", 
-            scrollTrigger: {
-              trigger: ".arrow-down",
-              start: "top center",
-              end: "center center",
-              scrub: 5, // Increase scrub value for slower animation
-            }
-          }
-        );
     
 
       gsap.from("#about .presentation-content", {
@@ -137,7 +134,7 @@ export default function Home() {
           trigger: "#about",
           start: "top center",
           end: "top top",
-          scrub: 1
+          scrub: 2
         }
       });
 
@@ -148,7 +145,7 @@ export default function Home() {
           trigger: "#skills",
           start: "top center",
           end: "top top",
-          scrub: 1
+          scrub: 2
         }
       });
 
@@ -159,7 +156,7 @@ export default function Home() {
           trigger: "#projects",
           start: "top center",
           end: "top top",
-          scrub: 1
+          scrub: 2
         }
       });
 
@@ -185,8 +182,7 @@ export default function Home() {
   </section>
   <About/>
   <section className="arrow-down">
-      {/*<FontAwesomeIcon icon={faArrowDown} size="2x" />*/}
-      <img src="img/arr.png" alt="" />
+      <p>Keep Scrolling!</p>
   </section>
   <Skills/>
   <Projects/>

@@ -24,7 +24,9 @@ return (
     </div>
     <div className='resumeButton'>
       <a target="_blank" href="" className='resumeLink'>
-        <span className='resumeText'>See my resume!</span>              </a>
+        <span className='resumeText'>See my resume!</span>
+        <img src="img/uprarr.png" alt="" />  
+      </a>
     </div>
   </div>
 </div>

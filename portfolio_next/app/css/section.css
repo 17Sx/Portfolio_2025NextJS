@@ -99,72 +99,52 @@
     }
   }
   
-  .presentation-content {
-    animation: subtleFloat 10s ease-in-out infinite;
+  .resumeButton{
+    width: 40%;
+    display: flex;
+    margin-top: 2rem;
   }
 
-    .resumeLink {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      background: linear-gradient(45deg, #ffffff, #9e9e9e);
-      border: 2px solid #000000;
-      font-size: 1rem;
-      font-weight: bold;
-      color: #000000;
-      cursor: pointer;
-      width: 15rem;
-      height: 2rem;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      margin-top: 2rem;
-  }
-
-  .resumeLink:hover {
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
-      background: linear-gradient(90deg, #ffffff, #d3d3d3, #9e9e9e);
-      animation: glow 2s infinite alternate;
-  }
-
-  .resumeLink:before {
-      content: '';
-      position: absolute;
-      top: -100%;
-      left: -100%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.6), transparent 70%);
-      transform: rotate(45deg);
-      transition: opacity 0.3s ease;
-      opacity: 0;
-  }
-
-  .resumeLink:before {
-      opacity: 0.5;
-      animation: shine 1.5s infinite linear;
+  .resumeLink {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
   }
 
   .resumeLink img {
-      width: 40px;
-      height: 40px;
-      margin-left: 10px;
-      transition: transform 0.3s ease;
+    width: 15px;
+    height: 15px;
+    margin-left: 2px;
+    transition: all 0.3s ease;
   }
 
   .resumeLink:hover img {
-      transform: rotate(360deg);
-  }
-  
-  .scene-container {
-    width: 100%;
-    height: 100vh;
-    will-change: transform;
+    margin-left: -8.5rem;
   }
 
+  .resumeText{
+    position: relative;
+  }
+
+  .resumeText::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    width: 0;
+    height: 2px;
+    background-color: #000000;
+    transition: width 0.3s ease;
+  }
+
+  .resumeText:hover::after {
+    width: 120%;
+  }
+  
     @keyframes shine {
       0% {
           transform: translate(-200%, -200%) rotate(45deg);
@@ -188,6 +168,7 @@
   }
   
   .presentation {
+    margin-top: 30rem;
     min-height: 100vh;
     width: 100%;
     display: flex;
@@ -197,8 +178,7 @@
   }
   
   .presentation-content {
-    width: 50%;
-    background: rgba(255, 255, 255, 0.95);
+    width: 60%;
     padding: 4rem;
     border: 1px solid rgba(0, 0, 0, 0.25);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -208,7 +188,9 @@
     width: 100%;
     height: 100vh;
     position: relative;
+
   }
+
   
   .scene-container canvas {
     width: 100% !important;
@@ -237,7 +219,7 @@
     /* About Section */
 
   .about {
-    min-height: 100vh;
+    height: 100vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -253,14 +235,15 @@
 /* Arrow Section */
 
 .arrow-down{
-    margin-bottom: 2rem;
     animation: bounce infinite ease 1s;
+    margin: 15rem;
   }
 
-  .arrow-down img{
-    width: 500px;
-    height: 500px;
-    rotate: 45deg;
+  .arrow-down p{
+    font-size: 5rem;
+    font-weight: bold;
+    color: #000000;
+    font-family: 'chrome', sans-serif;
   }
   
   
@@ -286,11 +269,10 @@
     align-items: center;
     justify-content: flex-start;
     padding: 0 5%;
-  }
+  } 
   
   .skills-content {
-    width: 50%;
-    background: rgba(255, 255, 255, 0.95);
+    width: 65%;
     padding: 4rem;
     border: 1px solid rgba(0, 0, 0, 0.25);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -342,7 +324,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.352);
   backdrop-filter: blur(10px);
 }
 
@@ -352,19 +333,19 @@
 }
 
 .projects-content h2::after{
-  width: 40%;
+  width: 70%;
 }
 
 .projects-grid {
   width: 80%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
 }
 
 .project-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 15px;
   padding: 2rem;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
@@ -389,23 +370,51 @@
   margin-bottom: 1.5rem;
 }
 
-.project-link {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  background: linear-gradient(45deg, #ffffff, #9e9e9e);
-  color: #000;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+.project-btn {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
 }
 
-.project-link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(90deg, #ffffff, #d3d3d3, #9e9e9e);
+.project-link {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
 }
+
+.project-btn img {
+  width: 15px;
+  height: 15px;
+  margin-left: 2px;
+  transition: all 0.3s ease;
+}
+
+.project-btn:hover img {
+  margin-left: -7rem;
+}
+
+.project-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -20px;
+  width: 0;
+  height: 2px;
+  background-color: #000000;
+  transition: width 0.3s ease;
+}
+
+.project-link:hover::after {
+  width: 120%;
+}
+
+
 
 .tech-project {
   margin-top: 1.5rem;

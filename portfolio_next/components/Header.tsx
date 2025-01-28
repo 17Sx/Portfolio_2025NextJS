@@ -16,10 +16,8 @@ export default function Header() {
   return (
     <nav className={"header"}>
         <div className={"logo"}>
-            <img src="img/Logo.png" alt="" />
             <div className={"logo-text"}>
                 <div>
-                    <h1>NOA OBRINGER.</h1>
                     <div className="p-container">
                         <p data-text="Let's collaborate!">Up to work!</p>
                     </div>

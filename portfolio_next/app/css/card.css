@@ -3,7 +3,7 @@
   overflow: hidden; 
 }
 
-.project-card img {
+.project-img {
   position: absolute;
   top: 0;
   left: 0;
@@ -15,18 +15,28 @@
   z-index: 1;
 }
 
-.project-card:hover img {
+.project-card:hover .project-img {
   opacity: 1; 
 }
 
 .project-card:hover h3,
 .project-card:hover p,
-.project-card:hover .bottom-card {
+.project-card:hover .bottom-card,
+.project-card:hover .project-link{
   position: relative;
   z-index: 2;
   color: white; 
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); 
 }
+
+.project-card:hover .project-btn img{
+  filter: invert(1);
+}
+
+.project-card:hover .project-link::after {
+  background-color: #fff;
+}
+
 
 .project-card::after {
   content: '';

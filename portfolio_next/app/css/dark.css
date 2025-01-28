@@ -10,10 +10,6 @@
     background-repeat: no-repeat;
   }
   
-  .dark .header {
-    border-bottom: 1px solid #ffffff;
-  }
-  
   .dark .header h1 {
     color: #fff;
   }
@@ -78,4 +74,8 @@
   
   .dark .skill-item{
     fill: #fff;
+  }
+
+  .dark .arrow-down{
+    filter: invert(1);
   }

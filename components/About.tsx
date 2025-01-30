@@ -25,7 +25,7 @@ return (
     <div className='resumeButton'>
       <a target="_blank" href="" className='resumeLink'>
         <span className='resumeText'>See my resume!</span>
-        <Image src="img/uprarr.png" alt="" />  
+        <Image src="/img/uprarr.png" alt="" width={24} height={24} />  
       </a>
     </div>
   </div>

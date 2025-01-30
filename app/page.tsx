@@ -185,7 +185,6 @@ export default function Home() {
     </div>
   </section>
   <h2 className='scrolltitle'>Scroll to discover my journey</h2>
-  <Image src="./img/gif.gif" alt="" />
   <About/>
   <section className="arrow-down">
       <p>Keep Scrolling!</p>

@@ -15,7 +15,7 @@ interface SceneContentProps {
 }
 
 const SceneContent = ({ text }: SceneContentProps) => {
-  const controlsRef = useRef(typeof OrbitControls);
+  const controlsRef = useRef<OrbitControls | null>(null);
   const textRef = useRef<any>(null);
   const { camera } = useThree();
   const initialRotation = useRef({ x: 0, y: 0, z: 0 });

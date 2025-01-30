@@ -7,6 +7,8 @@ import { Canvas, useThree } from '@react-three/fiber';
 import { Suspense } from 'react';
 import { OrbitControls } from '@react-three/drei';
 import gsap from 'gsap';
+import * as THREE from 'three'
+
 
 interface SceneContentProps {
   text: string;
@@ -99,16 +101,18 @@ const SceneContent = ({ text }: SceneContentProps) => {
         <Model />
         <Text
           ref={textRef}
-          position={[0, 2.5, 4]} 
-          fontSize={0.8} 
+          position={[0, 0, 5]} 
+          fontSize={1}
+          fillOpacity={0.9}
           font='font/kholic.otf'
           fontWeight={700}
           anchorX="center" 
           anchorY="middle"
-          color="black"
+          color="white"
         >
           {text}
         </Text>
+
       </group>
 
       <OrbitControls
@@ -146,5 +150,4 @@ const Scene = ({ text }: SceneProps) => {
 };
 
 export default Scene;
-
 

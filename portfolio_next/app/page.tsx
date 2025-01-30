@@ -85,9 +85,9 @@ export default function Home() {
                 duration: 0,
                 ease: "power2.inOut"
                 });
-            } else if (self.progress < 0.40) {
+            } else if (self.progress < 0.45) {
               setSceneText("Who am I?");
-            } else if (self.progress < 0.70) {
+            } else if (self.progress < 0.65) {
               setSceneText(" ");
             } else if (self.progress < 0.80) {
               setSceneText("What can I do?");
@@ -118,6 +118,9 @@ export default function Home() {
         )
         .to(".scene-container", {
           left: "0%",
+        })
+        .to(".scene-container", {
+          left: "60%",
         })
         .to(".scene-container", {
           left: "60%",
@@ -180,6 +183,8 @@ export default function Home() {
       <Scene  text={sceneText} />
     </div>
   </section>
+  <h2 className='scrolltitle'>Scroll to discover my journey</h2>
+  <img src="./img/gif.gif" alt="" />
   <About/>
   <section className="arrow-down">
       <p>Keep Scrolling!</p>

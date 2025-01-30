@@ -20,19 +20,19 @@ const SceneContent = ({ text }: SceneContentProps) => {
   const { camera } = useThree();
   const initialRotation = useRef({ x: 0, y: 0, z: 0 });
 
-  const resetRotation = () => {
-    if (controlsRef.current) {
-      gsap.to(camera.position, {
-        x: initialRotation.current.x,
-        y: initialRotation.current.y,
-        z: 8,
-        duration: 1,
-        ease: "power2.out"
-      });
-    }
-  };
 
   useEffect(() => {
+    const resetRotation = () => {
+      if (controlsRef.current) {
+        gsap.to(camera.position, {
+          x: initialRotation.current.x,
+          y: initialRotation.current.y,
+          z: 8,
+          duration: 1,
+          ease: "power2.out"
+        });
+      }
+    };
     const controls = controlsRef.current;
     if (controls) {
       controls.addEventListener('end', resetRotation);
@@ -40,7 +40,7 @@ const SceneContent = ({ text }: SceneContentProps) => {
         controls.removeEventListener('end', resetRotation);
       };
     }
-  }, []);
+  }, [, camera.position]);
 
   useEffect(() => {
     if (textRef.current) {

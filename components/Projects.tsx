@@ -10,7 +10,7 @@ const Projects = () => {
 return (
 <section className="projects" id="projects">
 <div className="projects-content">
-  <h2 className="animated-title">Here's some of my latest projects.</h2>
+  <h2 className="animated-title">Here&apos;s some of my latest projects.</h2>
   <div className="projects-grid">
   <div className="project-card">
       <h3>ToDoList - 2024</h3>
@@ -95,7 +95,7 @@ return (
       </div>
     </div>
     <div className="project-card">
-      <h3>Harry's Card's - 2023</h3>
+      <h3>Harry&apos;s Card&apos;s - 2023</h3>
       <p>A simple project of card exchange and request to an API made in year 1 in my school, with quite a few flaws</p>
       <Image className='project-img' src="./img/Harrycards.png" alt=""/>
       <div className="bottom-card">

@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-
+import Image from "next/image";
 
 const About = () => {
 const aboutRef = useRef<HTMLElement>(null);
@@ -25,7 +25,7 @@ return (
     <div className='resumeButton'>
       <a target="_blank" href="" className='resumeLink'>
         <span className='resumeText'>See my resume!</span>
-        <img src="img/uprarr.png" alt="" />  
+        <Image src="img/uprarr.png" alt="" />  
       </a>
     </div>
   </div>

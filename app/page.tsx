@@ -6,6 +6,7 @@ import Projects from '@/components/Projects';
 import Header from '@/components/Header';
 import Scene from '@/components/Scene';
 import LoadingPage from '@/components/LoadingPage'; 
+import Image from 'next/image';
 
 import styles from './page.module.css';
 
@@ -184,7 +185,7 @@ export default function Home() {
     </div>
   </section>
   <h2 className='scrolltitle'>Scroll to discover my journey</h2>
-  <img src="./img/gif.gif" alt="" />
+  <Image src="./img/gif.gif" alt="" />
   <About/>
   <section className="arrow-down">
       <p>Keep Scrolling!</p>

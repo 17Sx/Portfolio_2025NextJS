@@ -5,54 +5,47 @@ import { Environment, Text } from '@react-three/drei';
 import { useRef, useEffect } from 'react';
 import { Canvas, useThree } from '@react-three/fiber';
 import { Suspense } from 'react';
-import { OrbitControls } from '@react-three/drei';
 import gsap from 'gsap';
-import * as THREE from 'three'
-
+import * as THREE from 'three';
 
 interface SceneContentProps {
   text: string;
 }
 
 const SceneContent = ({ text }: SceneContentProps) => {
-  const controlsRef = useRef<OrbitControls | null>(null);
   const textRef = useRef<any>(null);
+  const groupRef = useRef<THREE.Group>(null);
   const { camera } = useThree();
-  const initialRotation = useRef({ x: 0, y: 0, z: 0 });
-
+  const initialRotation = useRef({ x: 0, y: 0, z: 8 });
 
   useEffect(() => {
-    const resetRotation = () => {
-      if (controlsRef.current) {
-        gsap.to(camera.position, {
-          x: initialRotation.current.x,
-          y: initialRotation.current.y,
-          z: 8,
+    const resetModelPosition = () => {
+      if (groupRef.current) {
+        gsap.to(groupRef.current.position, {
+          x: 0,
+          y: 0,
+          z: 0,
           duration: 1,
-          ease: "power2.out"
+          ease: "power2.out",
         });
       }
     };
-    const controls = controlsRef.current;
-    if (controls) {
-      controls.addEventListener('end', resetRotation);
-      return () => {
-        controls.removeEventListener('end', resetRotation);
-      };
-    }
-  }, [, camera.position]);
+
+    return () => {
+    };
+  }, [camera]);
 
   useEffect(() => {
     if (textRef.current) {
       gsap.from(textRef.current.position, {
         y: -2,
         duration: 1,
-        ease: "power2.out"
+        ease: "power2.out",
       });
       gsap.to(textRef.current.material, {
         opacity: 1,
         duration: 1,
-        ease: "power2.out"
+        ease: "power2.out",
       });
     }
   }, [text]);
@@ -65,7 +58,7 @@ const SceneContent = ({ text }: SceneContentProps) => {
         }
       } else {
         if (textRef.current) {
-          textRef.current.material.color.set(0x000000); 
+          textRef.current.material.color.set(0x000000);
         }
       }
     };
@@ -96,37 +89,24 @@ const SceneContent = ({ text }: SceneContentProps) => {
       <ambientLight intensity={0.5} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
       <pointLight position={[-10, -10, -10]} />
-      
-      <group>
+
+      <group ref={groupRef}>
         <Model />
         <Text
           ref={textRef}
-          position={[0, 0, 5]} 
+          position={[0, 0, 5]}
           fontSize={1}
           fillOpacity={0.9}
           font='font/kholic.otf'
           fontWeight={700}
-          anchorX="center" 
+          anchorX="center"
           anchorY="middle"
-          color="white"
+          color="black"
         >
           {text}
         </Text>
-
       </group>
 
-      <OrbitControls
-        ref={controlsRef}
-        enableZoom={false}
-        enablePan={false}
-        enableRotate={true}
-        autoRotate={false}
-        enableDamping={true}
-        dampingFactor={0.05}
-        minPolarAngle={Math.PI / 2}
-        maxPolarAngle={Math.PI / 2}
-        target={[0, 0, 0]}
-      />
       <Environment preset="warehouse" />
     </>
   );
@@ -150,4 +130,3 @@ const Scene = ({ text }: SceneProps) => {
 };
 
 export default Scene;
-

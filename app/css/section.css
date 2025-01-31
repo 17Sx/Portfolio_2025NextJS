@@ -196,14 +196,6 @@
     height: 100% !important;
   }
 
-  canvas {
-    cursor: grab;
-    z-index: 5;
-  }
-
-  canvas:active {
-    cursor: grabbing;
-  }
   
   .presentation-text {
     max-width: 800px;

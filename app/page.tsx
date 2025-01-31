@@ -6,7 +6,7 @@ import Projects from '@/components/Projects';
 import Header from '@/components/Header';
 import Scene from '@/components/Scene';
 import LoadingPage from '@/components/LoadingPage'; 
-import Image from 'next/image';
+import Contact from '@/components/Contact';
 
 import styles from './page.module.css';
 
@@ -184,13 +184,13 @@ export default function Home() {
       <Scene  text={sceneText} />
     </div>
   </section>
-  <h2 className='scrolltitle'>Scroll to discover my journey</h2>
   <About/>
   <section className="arrow-down">
       <p>Keep Scrolling!</p>
   </section>
   <Skills/>
   <Projects/>
+  <Contact/>
 </main>
   );
 }

@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import Image from "next/image";
 
 const Contact = () => {
   const contactRef = useRef<HTMLElement>(null);
@@ -46,24 +47,26 @@ const Contact = () => {
   return (
     <section className="contact" id="contact" ref={contactRef}>
       <div className="contact-container">
-        <h2 className="contact-title">Let &lsquo;s Connect</h2>
-        <form ref={formRef} onSubmit={sendEmail} className="contact-form">
-          <div className="form-group">
-            <label htmlFor="name">Name</label>
-            <input type="text" id="name" name="from_name" placeholder="What should I call you ?" required/>
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" name="from_email" placeholder="I should get back to you, shouldn't I?" required/>
-          </div>
-          <div className="form-group">
-            <label htmlFor="message">Message</label>
-            <textarea id="message" name="message" rows={5} placeholder="Tell me about your project!" required/>
-          </div>
-          <button type="submit" className="submit-btn">
-            Send Message
-          </button>
-        </form>
+          <form ref={formRef} onSubmit={sendEmail} className="contact-form">
+          <h2 className="contact-title">Let&apos;s Talk!</h2>
+            <div className="form-group">
+              <label htmlFor="name">[Your Name]</label>
+              <input type="text" id="name" name="from_name" required/>
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">[Your Email]</label>
+              <input type="email" id="email" name="from_email" required/>
+            </div>
+            <div className="form-group">
+              <label htmlFor="message"> [Your Message]</label>
+              <textarea id="message" name="message" rows={1} required/>
+            </div>
+            <button type="submit" className="submit-btn">
+              [Send Message
+              <Image src="/img/uprarr.png" alt="" width={16} height={16}/>
+              ]
+            </button>
+          </form>
       </div>
     </section>
   );

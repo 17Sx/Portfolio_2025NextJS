@@ -1,4 +1,12 @@
-/* Presentation Section*/
+.top {
+  background-image: url(../../public/img/bgg.png);
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+  /* Presentation Section*/
 
 .presentation {
     min-height: 100vh;

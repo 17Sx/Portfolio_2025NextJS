@@ -169,19 +169,7 @@ export default function Home() {
   </section>
   <About/>
   <section className="arrow-down">
-      <BlurText
-
-      text="Keep Scrolling!"
-
-      delay={150}
-
-      animateBy="words"
-
-      direction="top"
-
-      onAnimationComplete={handleAnimationComplete}
-
-      />
+    <p>Keep Scrolling!</p>
   </section>
   <Skills/>
   <Projects/>

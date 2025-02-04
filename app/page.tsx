@@ -175,5 +175,7 @@ export default function Home() {
   <Projects/>
   <Footer/>
 </main>
-  );
+  ); 
+  
 }
+ 

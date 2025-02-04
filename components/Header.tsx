@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import { faMoon } from '@fortawesome/free-solid-svg-icons';
 
 export default function Header() {
   const [isDark, setIsDark] = useState(false);

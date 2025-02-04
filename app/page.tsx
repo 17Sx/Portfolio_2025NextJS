@@ -7,18 +7,27 @@ import Header from '@/components/Header';
 import Scene from '@/components/Scene';
 import LoadingPage from '@/components/LoadingPage'; 
 import Footer from '@/components/Footer';
+import BlurText from '@/components/BlurText';
 
 import styles from './page.module.css';
+
 
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
 
 export default function Home() {
   const sceneRef = useRef(null);
   const [sceneText, setSceneText] = useState(" ");
   const [isLoading, setIsLoading] = useState(true);
   
+  
+  const handleAnimationComplete = () => {
+
+    console.log('Animation completed!');
+
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -160,7 +169,19 @@ export default function Home() {
   </section>
   <About/>
   <section className="arrow-down">
-      <p>Keep Scrolling!</p>
+      <BlurText
+
+      text="Keep Scrolling!"
+
+      delay={150}
+
+      animateBy="words"
+
+      direction="top"
+
+      onAnimationComplete={handleAnimationComplete}
+
+      />
   </section>
   <Skills/>
   <Projects/>

@@ -339,7 +339,7 @@
   width: 80%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2rem;
+  gap: 3.5rem;
   margin-top: 3rem;
 }
 

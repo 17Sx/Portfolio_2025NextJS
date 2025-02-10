@@ -118,7 +118,9 @@ export default function Model() {
 
   return (
     <>
-      <Text 
+      {viewport.width > 7.5 ? (
+        <>
+          <Text 
         position={[0, 3, -3]} 
         fontSize={5} 
         material={textMaterial}
@@ -126,10 +128,10 @@ export default function Model() {
         fontWeight={700}
         anchorX="center" 
         anchorY="middle"
-      >
+          >
         Creating solutions,
-      </Text>
-      <Text 
+          </Text>
+          <Text 
         position={[0, -2, -3]} 
         fontSize={5} 
         material={textMaterial}
@@ -137,10 +139,10 @@ export default function Model() {
         fontWeight={700}
         anchorX="center" 
         anchorY="middle"
-      >
+          >
         one idea at a time.
-      </Text>
-      <Text 
+          </Text>
+          <Text 
         position={[0, -1.5, 5]} 
         fontSize={0.2} 
         material={textMaterial}
@@ -148,9 +150,11 @@ export default function Model() {
         fontWeight={700}
         anchorX="center" 
         anchorY="middle"
-      >
+          >
         Scroll gently!
-      </Text>
+          </Text>
+        </>
+      ) : null}
 
       <group ref={groupRef}>
         <group position={[pivotX, pivotY, pivotZ]}>

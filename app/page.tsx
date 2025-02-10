@@ -7,7 +7,7 @@ import Header from '@/components/Header';
 import Scene from '@/components/Scene';
 import LoadingPage from '@/components/LoadingPage'; 
 import Footer from '@/components/Footer';
-import BlurText from '@/components/BlurText';
+import Respsection from '@/components/Respsection';
 
 import styles from './page.module.css';
 
@@ -23,12 +23,6 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   
   
-  const handleAnimationComplete = () => {
-
-    console.log('Animation completed!');
-
-  };
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -161,8 +155,12 @@ export default function Home() {
   return (
     
 <main className={styles.main}>
+<Header />
+
+  <div className="responsive-section-wrapper">
+    <Respsection/>
+  </div>
   <section className="top" id="home">
-    <Header />
     <div className="scene-container" ref={sceneRef}>
       <Scene  text={sceneText} />
     </div>

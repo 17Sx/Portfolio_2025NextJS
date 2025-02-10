@@ -460,3 +460,114 @@
   color: #000000;
   font-family: 'kholic', sans-serif;
 }
+
+.responsive-section-wrapper{
+  display:none;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .scene-container {
+    display: none;
+  }
+
+  .top{
+    display: none;
+  }
+
+  .responsive-section-wrapper{
+    display:block;
+  }
+
+  /*Responsive About section*/
+
+  .presentation {
+    margin-top: 5rem;
+    height: auto;
+    padding: 2rem;
+  }
+
+  .presentation-content {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .animated-title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .animated-paragraph {
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+  .resumeButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .resumeLink img {
+    width: 12px;
+    height: 12px;
+  }
+
+  .resumeLink:hover img {
+    margin-left: -6.5rem;
+  }
+
+  /*Responsive Skill Section*/
+
+  .skills {
+    height: auto;
+    padding: 2rem;
+    justify-content: center;
+  }
+
+  .skills-content {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .skill-category {
+    margin-bottom: 1.5rem;
+  }
+
+  .skill-category h3 {
+    font-size: 1.2rem;
+  }
+
+  .skill-item {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+  }
+
+  /* Responsive Project section */
+
+  .projects{
+    margin-bottom: 20rem;
+  }
+
+  .projects-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .projects-grid{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+}

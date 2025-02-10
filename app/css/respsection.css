@@ -1,0 +1,48 @@
+
+.responsive-section-wrapper{
+    height: 60vh;
+    width: 80%;    
+}
+.responsive-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+}
+.responsive-section-title{
+    width: 100%;
+    text-align: start;
+    margin-bottom: 2rem;
+}
+.responsive-section-content{
+    width: 100%;
+    text-align: start;
+}
+
+.responsive-h1{
+    font-size: 3rem;
+    font-weight: bold;
+    color: #000000;
+    font-family: 'kholic', sans-serif;
+}
+
+.responsive-h2{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000000;
+    font-family: 'kholic', sans-serif;
+}
+
+.responsive-p{
+    font-size: 1.2rem;
+    text-align: start;
+}
+
+.warning{
+    width: 100%;
+    text-align: start;
+    margin-top: 2rem;
+    font-size: 0.5rem;
+}

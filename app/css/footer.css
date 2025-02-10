@@ -16,3 +16,35 @@
     display: flex;
     height: 100%;
 }
+
+@media screen and (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .top-footer {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .footer-content{
+        width: 100% !important;
+    }
+
+    .footer-content-left{
+        width: 100% !important;
+    }
+
+    .footer-content-left p{
+        width: 80%;
+    }
+
+    .contact{
+        width: 100% !important;
+    }
+
+    .contact-container{
+        width: 100% !important;
+    }
+}

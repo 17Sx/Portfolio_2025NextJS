@@ -51,22 +51,22 @@ export default function Header() {
     <ul>
         <li>
             <Link href="/" className={"header-button"} data-text="Welcome"> 
-                <span>01</span> Home
+                <span className="h-number">01</span> Home
             </Link>
         </li>
         <li>
             <Link href="#about" className={"header-button"} data-text="Who am I?"> 
-                <span>02</span> About
+                <span className="h-number">02</span> About
             </Link>
         </li>
         <li>
             <Link href="#projects" className={"header-button"} data-text="My Work"> 
-                <span>03</span> Projects
+                <span className="h-number">03</span> Projects
             </Link>
         </li>
         <li>
             <Link href="#contact" className={"header-button"} data-text="Let's Talk"> 
-                <span>04</span> Contact
+                <span className="h-number">04</span> Contact
             </Link>
         </li>
     </ul>

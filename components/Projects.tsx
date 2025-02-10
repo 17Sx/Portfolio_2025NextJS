@@ -95,9 +95,7 @@ return (
                 }
                 linkUrl={"https://17sx.github.io/WeatherAPP/"} 
               />
-    {showMore && (
-            <>
-              <TiltedCard
+                            <TiltedCard
                 imageSrc="/img/PhpCrud.png"
                 altText="Simple CRUD Php - 2024"
                 captionText="A CRUD Php to train myself in PHP made in year 2 in my school"
@@ -137,18 +135,10 @@ return (
                 }
                 linkUrl={"https://github.com/17Sx/ProjetD-axe2024/"} 
               />
-            </>
-  )}
 
   </div>
 
 </div>
-<button 
-          className="see-more-btn" 
-          onClick={() => setShowMore(!showMore)}
-        >
-          {showMore ? 'Show Less' : 'See more'}
-        </button>
 </section>
 
 );

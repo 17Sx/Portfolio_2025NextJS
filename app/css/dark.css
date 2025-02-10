@@ -79,3 +79,73 @@
   .dark .arrow-down{
     filter: invert(1);
   }
+
+  .dark .contact-title::after{
+    background: linear-gradient(90deg, #fff, transparent);
+  }
+
+  .dark .social-icons{
+    filter: invert(1);
+  }
+
+  .dark .see-more-btn{
+    background-color: #fff;
+    color: #000;
+  }
+
+  .dark .contact-form {
+    color: #fff;
+  }
+
+  .dark .contact-form .form-group label {
+    color: #ccc;
+  }
+
+  .dark .form-group{
+    border-bottom: 1px solid rgb(255, 255, 255);
+  }
+
+  .dark .contact-form .form-group input,
+  .dark .contact-form .form-group textarea {
+    color: #fff;
+  }
+
+  .dark .contact-form .form-group input::placeholder,
+  .dark .contact-form .form-group textarea::placeholder {
+    color: #ccc;
+  }
+
+  .dark .contact-form .submit-btn {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .dark .contact-form .submit-btn:hover {
+    background-color: #ccc;
+    color: #000;
+  }
+
+  .dark .footer{
+    border-top: 1px solid #fff; 
+  }
+
+  .dark .resumeButton {
+    background-color: rgba(0, 0, 0, 0.621);
+    backdrop-filter: blur(10px);
+  }
+
+  .dark .resumeLink {
+    color: #fff;
+  }
+
+  .dark .resumeText {
+    color: #fff;
+  }
+
+  .dark .resumeButton img {
+    filter: invert(1);
+  }

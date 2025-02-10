@@ -10,7 +10,7 @@ const Footer = () => {
         <FooterContent/>
 	    <Contact />
     </div>
-        <p>All rights reserved <Link href="/">@17Sx</Link></p>
+        <p>All rights reserved <Link className="username" href="/">@17Sx</Link></p>
 	</footer>
   );
 };

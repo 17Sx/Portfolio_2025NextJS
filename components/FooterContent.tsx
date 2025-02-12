@@ -6,7 +6,7 @@ const FooterContent = () => {
   return (
     <div className="footer-content">
       <div className="footer-content-left">
-        <h2 className="contact-title">Let &apos;s Connect</h2>
+        <h2 className="contact-title">Let&apos;s Connect</h2>
         <p>
           Feel free to contact me for any project or collaboration. I am always open to discussing new ideas, creative projects, or opportunities to be part of your visions. Let&apos;s work together to create something amazing!
         </p>

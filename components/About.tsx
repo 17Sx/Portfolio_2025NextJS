@@ -23,7 +23,7 @@ return (
         <a className="highlight-link" href="#contact"> contact me!</a> 
     </div>
     <div className='resumeButton'>
-      <a target="_blank" href="" className='resumeLink'>
+      <a target="_blank" href="./img/CV_NoaObringer.pdf" className='resumeLink'>
         <span className='resumeText'>See my resume!</span>
         <Image src="/img/uprarr.png" alt="" width={24} height={24} />  
       </a>

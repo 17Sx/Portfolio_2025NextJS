@@ -149,3 +149,7 @@
   .dark .resumeButton img {
     filter: invert(1);
   }
+
+  .dark .username{
+    color: white;
+  }

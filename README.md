@@ -2,7 +2,7 @@ Noa Obringer | 17Sx
 
 # Portfolio Website
 
-Check the [Website](noaobringer.com)
+Check the [Website](https://noaobringer.com/)
 
 ## Overview
 A modern portfolio website built with Next.js, showcasing my development projects and skills.

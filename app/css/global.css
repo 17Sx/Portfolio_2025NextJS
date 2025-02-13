@@ -9,3 +9,14 @@
 @import url('footercontent.css');
 @import url('TiltedCard.css');
 @import url('respsection.css');
+
+
+@font-face {
+    font-family: 'chrome';  
+    src: url('../../public/font/chrome.ttf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Roboto';  
+    src: url('../../public/font/rb.ttf') format('opentype');
+}

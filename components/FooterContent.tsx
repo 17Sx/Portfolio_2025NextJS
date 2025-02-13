@@ -19,9 +19,6 @@ const FooterContent = () => {
                 <Link href="https://github.com/17Sx" target="_blank" rel="noopener noreferrer">
                     <Image src="/img/github.png" alt="Github Profile" width={48} height={48} />
                 </Link>
-                <Link href="https://twitter.com/SxSad11" target="_blank" rel="noopener noreferrer">
-                    <Image src="/img/twitter.png" alt="Twitter Profile" width={48} height={48} />
-                </Link>
             </div>
         </div>
       </div>

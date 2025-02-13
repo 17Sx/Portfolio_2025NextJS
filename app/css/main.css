@@ -26,17 +26,6 @@
   }
   
   
-  
-  @font-face {
-    font-family: 'chrome';  
-    src: url('../../public/font/chrome.ttf') format('opentype');
-  }
-  
-  @font-face {
-    font-family: 'Roboto';  
-    src: url('../../public/font/rb.ttf') format('opentype');
-  }
-  
   .top{
     height: 100vh;
     width: 100%;

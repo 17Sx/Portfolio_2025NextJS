@@ -16,8 +16,9 @@
     height: 75%;
 }
 
-.footer-content-left h2,.footer-content-left p,.footer-content-left div{
-    margin: 1rem;
+.footer-content-left h2,.footer-content-left p,.social-links{
+    margin-bottom: 1rem;
+    margin-left: 1rem;
 }
 
 .social-links h3{
@@ -29,14 +30,17 @@
 .social-links{
     width: 100%;
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
 }
 
 .social-icons{
-    width: 45%;
+    width: 30%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+}
+.social-icons img{
+    margin-right: 1rem;
+
 }
 
 .social-icons img:hover{

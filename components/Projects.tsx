@@ -73,7 +73,7 @@ return (
                     First Portfolio - 2024
                   </p> as any
                 }
-                linkUrl={"noaobringer.com"} 
+                linkUrl={"https://17sx.github.io/Portfolio_2024/"} 
               />
     <TiltedCard
                 imageSrc="/img/WeatherApp.png"

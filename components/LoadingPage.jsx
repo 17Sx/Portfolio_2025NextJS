@@ -91,7 +91,6 @@ const LoadingPage = () => {
 
   return (
     <LoadingContainer loading={loading}>
-      <Logo src='./img/logo.png' alt="Logo" />
       <CircleContainer>
         <Circle width="100" height="100">
           <CirclePath cx="50" cy="50" r="45" strokeDasharray={`${progress} 100`}/>

@@ -5,7 +5,7 @@ import About from '@/components/About';
 import Projects from '@/components/Projects';
 import Header from '@/components/Header';
 import Scene from '@/components/Scene';
-import LoadingPage from '@/components/LoadingPage'; 
+import LoadingPage from '@/components/LoadingPage.jsx'; 
 import Footer from '@/components/Footer';
 import Respsection from '@/components/Respsection';
 

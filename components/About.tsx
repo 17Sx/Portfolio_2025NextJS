@@ -10,7 +10,7 @@ return (
   <div className="presentation-text">
     <h2 className="animated-title">About Me</h2>
     <div className="animated-paragraph">
-      Hi! I&apos;m Noa, i have 19 years old, and I&apos;m currently living in Paris, France. 
+      Hi! I&apos;m Noa, i am 19 years old, and I&apos;m currently living in Paris, France. 
       I&apos;m a developer still in school! I&apos;m currently studying at the 
       <a target='blank' href="https://www.iim.fr/" className="highlight-link">
         ❝ IIM DIGITAL SCHOOL - La Défense in Paris ❞

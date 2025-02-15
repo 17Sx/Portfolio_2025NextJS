@@ -8,7 +8,7 @@ const Respsection = () => {
             <div className="responsive-section-content">
                 <p className="responsive-p">Scroll for more information!</p>
             </div>
-            <p className="responsive-p warning">This website look better on desktop mode</p>
+            <p className="responsive-p warning">This website looks better on desktop mode</p>
         </div>
     );
     }

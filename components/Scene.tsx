@@ -54,11 +54,11 @@ const SceneContent = ({ text }: SceneContentProps) => {
     const handleDarkMode = () => {
       if (document.body.classList.contains('dark')) {
         if (textRef.current) {
-          textRef.current.material.color.set(0xffffff);
+          textRef.current.material.color.set(0x000000);
         }
       } else {
         if (textRef.current) {
-          textRef.current.material.color.set(0x000000);
+          textRef.current.material.color.set(0xffffff);
         }
       }
     };

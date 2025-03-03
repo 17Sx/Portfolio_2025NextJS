@@ -160,3 +160,15 @@
   .dark .responsive-h2{
     color: white;
   }
+
+  .dark home404{
+    color: white;
+  }
+
+  .fa-moon{
+    color: black;
+  }
+
+  .dark .submit-btn{
+    color: #ffffff;
+  }

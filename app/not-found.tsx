@@ -10,18 +10,21 @@ import Scene404 from '@/components/404scene';
 const NotFound = () => {
   return (
     <>
-    <main>
+<body className='dark'>
+        <main>
       <Header />
       <div style={{ position: 'absolute', bottom: 200, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
         <Scene404 />
       </div>
       <div className='not-found-container'>
         <div className='not-found-text'>
-            <p><Link className='a' href="/"> HomePage</Link>!</p>
+            <p className='home404'><Link className='a' href="/"> HomePage</Link>!</p>
         </div>  
       </div>
       <Footer />
     </main>
+    </body>
+
     </>
   );
 };

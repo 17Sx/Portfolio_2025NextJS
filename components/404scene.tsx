@@ -1,60 +1,179 @@
-"use client";
+import { MeshTransmissionMaterial, useGLTF, Text } from '@react-three/drei';
+import { useFrame, useThree, Canvas } from '@react-three/fiber';
+import { useRef, useState, useEffect, useMemo } from 'react';
+import * as THREE from 'three';
 
-import { Canvas } from '@react-three/fiber'
-import { MeshTransmissionMaterial, useGLTF, OrbitControls } from '@react-three/drei'
-import { useRef } from 'react'
-import { useFrame } from '@react-three/fiber'
-import { Group } from 'three'
-
-function Model() {
-    const group = useRef<Group>(null)
-    const { scene } = useGLTF('model/404.glb')
-
-    const materialProps = {
-        thickness: 2,
-        roughness: 0,        
-        transmission: 1,
-        ior: 1.5,         
-        chromaticAberration: 0.04,
-        backside: true,     
-        clearcoat: 1,       
-        transparent: true,  
-        opacity: 0.9,       
-    }
-
-    useFrame((state, delta) => {
-        if (group.current) {
-            group.current.rotation.y += delta * 0.5 
-        }
-    })
-
-    // Clone and modify the scene to apply the transmission material
-    const clonedScene = scene.clone()
-    clonedScene.traverse((node: any) => {
-        if (node.isMesh) {
-            node.material = <MeshTransmissionMaterial {...materialProps} />
-        }
-    })
-
-    return (
-        <group ref={group}>
-            <primitive object={clonedScene} />
-        </group>
-    )
+export default function Scene() {
+  return (
+    <Canvas>
+      <Model />
+    </Canvas>
+  );
 }
 
-export default function Scene404() {
-    return (
-        <Canvas
-            className='canvas-404'
-            camera={{ position: [0, 0, 5], fov: 90 }}
-            style={{ width: '100%', height: '100%' }}
-        >
-            <ambientLight intensity={0.5} />
-            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-            <pointLight position={[-10, -10, -10]} />
-            <Model />
-            <OrbitControls enableZoom={false} />
-        </Canvas>
-    )
+function Model() {
+  const { nodes } = useGLTF('model/404.glb');
+  const { viewport } = useThree();
+  const groupRef = useRef<THREE.Group>(null);
+  const [textOpacity, setTextOpacity] = useState(1);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const pivotX = 0;
+  const pivotY = 0;
+  const pivotZ = 0;
+  const rotationSpeed = 0.002;
+
+  const materialProps = {
+    thickness: 2,
+    roughness: 0,        
+    transmission: 1,
+    ior: 1.5,         
+    chromaticAberration: 0.04,
+    backside: true,     
+    clearcoat: 1,       
+    transparent: true,  
+    opacity: 0.9,       
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const opacity = Math.max(1 - scrollPosition / 300, 0);
+      setTextOpacity(opacity);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleDarkMode = () => {
+      setIsDarkMode(document.body.classList.contains('dark'));
+    };
+
+    handleDarkMode();
+
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          handleDarkMode();
+        }
+      });
+    });
+
+    observer.observe(document.body, {
+      attributes: true,
+      childList: false,
+      subtree: false,
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  useFrame(() => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y += rotationSpeed;
+    }
+  });
+
+  const gradientShader = useMemo(() => {
+    return {
+      uniforms: {
+        opacity: { value: 1.0 },
+        isDarkMode: { value: false },
+      },
+      vertexShader: `
+        varying vec2 vUv;
+        void main() {
+          vUv = uv;
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+      `,
+      fragmentShader: `
+        uniform float opacity;
+        uniform bool isDarkMode;
+        varying vec2 vUv;
+        void main() {
+          vec3 color1;
+          vec3 color2;
+          
+          if (isDarkMode) {
+            color2 = vec3(1.0, 1.0, 1.0); // Blanc
+            color1 = vec3(1.0, 1.0, 1.0); // Blanc
+          } else {
+            color1 = vec3(0.0, 0.0, 0.0); // Noir
+            color2 = vec3(0.0, 0.0, 0.0); // Noir
+          }
+          
+          vec3 finalColor = mix(color1, color2, vUv.x);
+          gl_FragColor = vec4(finalColor, opacity);
+        }
+      `
+    };
+  }, []);
+
+  const textMaterial = new THREE.ShaderMaterial({
+    ...gradientShader,
+    transparent: true,
+    uniforms: {
+      ...gradientShader.uniforms,
+      opacity: { value: textOpacity },
+      isDarkMode: { value: isDarkMode }
+    }
+  });
+
+  return (
+    <>
+      {viewport.width > 7.5 ? (
+        <>
+          <Text 
+        position={[0, 0, -10]} 
+        fontSize={1} 
+        material={textMaterial}
+        font='font/kholic.otf'
+        fontWeight={700}
+        anchorX="center" 
+        anchorY="middle"
+          >
+        404 | NOT FOUND!
+          </Text>
+          <Text 
+        position={[0, -1, -10]} 
+        fontSize={1} 
+        material={textMaterial}
+        font='font/kholic.otf'
+        fontWeight={700}
+        anchorX="center" 
+        anchorY="middle"
+          >
+        Go Back To The Homepage
+          </Text>
+        </>
+      ) : null}
+
+      <group ref={groupRef}>
+        <group position={[pivotX, pivotY, pivotZ]}>
+          {Object.values(nodes).map((node) => {
+            if ((node as THREE.Mesh).isMesh) {
+              const mesh = node as THREE.Mesh;
+              return (
+                <mesh 
+                  key={mesh.uuid} 
+                  geometry={mesh.geometry}
+                  position={[0, 0, 0]}
+                  rotation={mesh.rotation}
+                  scale={mesh.scale}
+                >
+                  <MeshTransmissionMaterial {...materialProps} />
+                </mesh>
+              );
+            }
+            return null;
+          })}
+        </group>
+      </group>
+    </>
+  );
 }

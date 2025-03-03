@@ -61,7 +61,7 @@ export default function Home() {
               setSceneText("Who am I?");
             } else if (self.progress < 0.50) {
               setSceneText(" ");
-            } else if (self.progress < 0.70) {
+            } else if (self.progress < 0.75) {
               setSceneText("What can I do?");
             } else {
               setSceneText(" ");

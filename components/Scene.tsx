@@ -58,7 +58,7 @@ const SceneContent = ({ text }: SceneContentProps) => {
         }
       } else {
         if (textRef.current) {
-          textRef.current.material.color.set(0xffffff);
+          textRef.current.material.color.set(0x000000);
         }
       }
     };
@@ -101,7 +101,7 @@ const SceneContent = ({ text }: SceneContentProps) => {
           fontWeight={700}
           anchorX="center"
           anchorY="middle"
-          color="black"
+          color="white"
         >
           {text}
         </Text>

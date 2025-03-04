@@ -58,8 +58,7 @@ const SceneContent = ({ text }: SceneContentProps) => {
         }
       } else {
         if (textRef.current) {
-          textRef.current.material.color.set(0x000000
-          );
+          textRef.current.material.color.set(0xffffff);
         }
       }
     };

@@ -85,7 +85,7 @@ export default function Home() {
         height: "60vh",
         position: "fixed",
         top: "50%",
-        transform: "translateY(-50%)",
+        transform: "translateY(-20%)",
           }
         )
         .to(".scene-container", {

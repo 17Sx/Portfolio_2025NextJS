@@ -18,7 +18,7 @@ const NotFound = () => {
       </div>
       <div className='not-found-container'>
         <div className='not-found-text'>
-            <p className='home404'><Link className='a' href="/"> HomePage</Link>!</p>
+            <p className='home404'><Link className='homepagebtn' href="/"> HomePage</Link>!</p>
         </div>  
       </div>
       <Footer />

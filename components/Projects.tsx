@@ -13,6 +13,26 @@ return (
 <div className="projects-content">
   <h2 className="animated-title">Here&apos;s some of my latest projects.</h2>
   <div className="projects-grid">
+  <TiltedCard
+                imageSrc="/img/flowspace.png"
+                altText="Flowspace - 2025"
+                captionText="A personal project developed in 3-4 hours to practice TypeScript. The application combines a Pomodoro timer and a Kanban board for efficient task management."
+                containerHeight="300px"
+                containerWidth="350px"
+                imageHeight="300px"
+                imageWidth="350px"
+                rotateAmplitude={10}
+                scaleOnHover={1.1}
+                showMobileWarning={false}
+                showTooltip={true}
+                displayOverlayContent={true}
+                overlayContent={
+                  <p className="tilted-card-demo-text">
+                    Flowspace - 2025
+                  </p> as any
+                }
+                linkUrl={"https://github.com/17Sx/dev-perso/"} 
+              />
     <TiltedCard
                 imageSrc="/img/Todo.png"
                 altText="ToDoList - 2024"

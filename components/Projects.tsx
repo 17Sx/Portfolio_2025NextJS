@@ -31,7 +31,7 @@ return (
                     Flowspace - 2025
                   </p> as any
                 }
-                linkUrl={"https://github.com/17Sx/dev-perso/"} 
+                linkUrl={"https://dev-perso.vercel.app/"} 
               />
     <TiltedCard
                 imageSrc="/img/Todo.png"

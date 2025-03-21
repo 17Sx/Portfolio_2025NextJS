@@ -51,7 +51,7 @@ return (
                     ToDoList - 2024
                   </p> as any
                 }
-                linkUrl={"https://github.com/Noootzzz/PokemonFightsPHP"} 
+                linkUrl={"https://github.com/17Sx/ToDoList_IIMA2"} 
               />
 
     <TiltedCard
